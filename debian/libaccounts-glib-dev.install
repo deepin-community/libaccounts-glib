@@ -1,0 +1,8 @@
+usr/include/libaccounts-glib/
+usr/lib/*/libaccounts-glib.so
+usr/lib/*/pkgconfig/libaccounts-glib.pc
+usr/share/dbus-1/interfaces/com.google.code.AccountsSSO.Accounts.Manager.xml
+usr/share/gettext/its/
+usr/share/gir-1.0/Accounts-1.0.gir
+usr/share/vala/vapi/libaccounts-glib.*
+usr/share/xml/accounts/

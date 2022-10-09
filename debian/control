@@ -1,0 +1,93 @@
+Source: libaccounts-glib
+Section: libs
+Priority: optional
+Maintainer: Debian/Kubuntu Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>
+Uploaders: Maximiliano Curia <maxy@debian.org>, Diane Trout <diane@debian.org>
+Build-Depends: check,
+               dbus,
+               debhelper-compat (= 13),
+               dh-sequence-gir,
+               gobject-introspection (>= 1.41.4-1~),
+               gtk-doc-tools,
+               libgirepository1.0-dev,
+               libglib2.0-dev (>= 2.26~),
+               libsqlite3-dev (>= 3.7.0),
+               libxml2-dev,
+               libxml2-utils,
+               meson (>= 0.48.0),
+               python3-gi,
+               valac,
+               xauth <!nocheck>,
+               xvfb <!nocheck>,
+Build-Depends-Indep: libglib2.0-doc
+Standards-Version: 4.5.1
+Rules-Requires-Root: no
+Homepage: https://gitlab.com/accounts-sso/libaccounts-glib
+Vcs-Browser: https://salsa.debian.org/qt-kde-team/3rdparty/libaccounts-glib
+Vcs-Git: https://salsa.debian.org/qt-kde-team/3rdparty/libaccounts-glib.git
+
+Package: libaccounts-glib-dev
+Section: libdevel
+Architecture: any
+Depends: gir1.2-accounts-1.0 (= ${binary:Version}),
+         libaccounts-glib0 (= ${binary:Version}),
+         libglib2.0-dev,
+         libsqlite3-dev,
+         libxml2-dev,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Accounts database access - development files
+ Accounts and SSO (Single Sign-On) framework for Linux and POSIX based
+ platforms.
+ .
+ This package contains files the development files of the accounts database
+ access GLib-based API.
+
+Package: libaccounts-glib0
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Accounts database access - shared library
+ Accounts and SSO (Single Sign-On) framework for Linux and POSIX based
+ platforms.
+ .
+ This package contains shared libraries of the accounts database access
+ GLib-based API.
+
+Package: gir1.2-accounts-1.0
+Section: introspection
+Architecture: any
+Multi-Arch: same
+Depends: libaccounts-glib0 (= ${binary:Version}),
+         ${gir:Depends},
+         ${misc:Depends}
+Description: typelib file for libaccounts-glib0
+ Accounts and SSO (Single Sign-On) framework for Linux and POSIX based
+ platforms.
+ .
+ This package can be used by other packages using the GIRepository format to
+ generate dynamic bindings for libaccounts-glib0
+
+Package: libaccounts-glib-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: libglib2.0-doc
+Description: Accounts database access - documentation
+ Accounts and SSO (Single Sign-On) framework for Linux and POSIX based
+ platforms.
+ .
+ This package contains the documentation of the accounts database access
+ GLib-based API.
+
+Package: libaccounts-glib-tools
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Accounts database access - tools
+ Accounts and SSO (Single Sign-On) framework for Linux and POSIX based
+ platforms.
+ .
+ This package provides the tools useful for the libaccounts-glib
+ library.

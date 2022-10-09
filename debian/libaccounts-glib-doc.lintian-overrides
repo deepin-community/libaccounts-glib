@@ -1,0 +1,2 @@
+# gtk-doc documentation, it is installed in its own place
+libaccounts-glib-doc: package-contains-documentation-outside-usr-share-doc usr/share/gtk-doc/html/*
